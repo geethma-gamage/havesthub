@@ -1,0 +1,28 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: #2e7d32;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+.sidebar button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+}

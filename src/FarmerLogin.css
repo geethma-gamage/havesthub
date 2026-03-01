@@ -1,0 +1,377 @@
+/* FarmerLogin.css - Complete HarvestHub Style */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.farmer-login {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.95) 0%, rgba(56, 142, 60, 0.9) 100%),
+              url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1920') center/cover;
+  background-attachment: fixed;
+  position: relative;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* Animated vegetable/fruit pattern overlay */
+.farmer-login::before {
+  content: '🌾';
+  position: absolute;
+  font-size: 150px;
+  opacity: 0.06;
+  top: 5%;
+  left: 8%;
+  animation: float 9s ease-in-out infinite;
+  text-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+}
+
+.farmer-login::after {
+  content: '🍃';
+  position: absolute;
+  font-size: 130px;
+  opacity: 0.06;
+  bottom: 10%;
+  right: 10%;
+  animation: float 11s ease-in-out infinite reverse;
+  text-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-40px) rotate(15deg); }
+}
+
+/* Login container wrapper */
+.farmer-login .login-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 550px;
+}
+
+/* HarvestHub Logo/Brand Area */
+.farmer-login h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 42px;
+  margin-bottom: 10px;
+  font-weight: 900;
+  position: relative;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 0.7s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.farmer-login h2::before {
+  content: '🌿 ';
+  font-size: 38px;
+  margin-right: 8px;
+}
+
+.farmer-login h2::after {
+  content: ' 🌿';
+  font-size: 38px;
+  margin-left: 8px;
+}
+
+/* Subtitle */
+.farmer-login .subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.farmer-login form {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(25px);
+  border-radius: 25px;
+  padding: 45px 50px;
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+  width: 100%;
+  position: relative;
+  animation: slideUp 0.7s ease-out;
+  border: 2px solid rgba(139, 195, 74, 0.3);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Welcome message inside form */
+.farmer-login form::before {
+  content: 'Welcome Back, Farmer!';
+  display: block;
+  text-align: center;
+  color: #2e7d32;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #c5e1a5;
+  letter-spacing: 0.5px;
+}
+
+/* Input wrapper for icon positioning */
+.farmer-login .input-wrapper {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.farmer-login .input-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.farmer-login input {
+  width: 100%;
+  padding: 16px 20px 16px 50px;
+  border: 2px solid #c5e1a5;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #f9fdf7;
+  color: #1b5e20;
+  outline: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.farmer-login input::placeholder {
+  color: #689f38;
+  font-weight: 600;
+}
+
+.farmer-login input:focus {
+  border-color: #4caf50;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+  transform: translateY(-2px);
+}
+
+.farmer-login input:hover {
+  border-color: #8bc34a;
+}
+
+.farmer-login button {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 50%, #81c784 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-top: 15px;
+  box-shadow: 
+    0 8px 20px rgba(76, 175, 80, 0.4),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.farmer-login button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.farmer-login button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.farmer-login button:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 12px 30px rgba(76, 175, 80, 0.5),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.farmer-login button:active {
+  transform: translateY(0);
+}
+
+.farmer-login p {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 18px;
+  padding: 22px 35px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: #2e7d32;
+  font-size: 15px;
+  max-width: 550px;
+  width: 100%;
+  margin-top: 25px;
+  border: 2px solid rgba(139, 195, 74, 0.3);
+  font-weight: 600;
+  animation: fadeInUp 0.9s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.farmer-login p span {
+  color: #388e3c;
+  cursor: pointer;
+  font-weight: 800;
+  transition: all 0.3s ease;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: #8bc34a;
+}
+
+.farmer-login p span:hover {
+  color: #2e7d32;
+  text-decoration-color: #4caf50;
+  transform: scale(1.05);
+  display: inline-block;
+}
+
+/* Decorative corner elements */
+.farmer-login form::after {
+  content: '🥬';
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 45px;
+  opacity: 0.1;
+  animation: rotate 25s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .farmer-login form,
+  .farmer-login p {
+    padding: 35px 30px;
+  }
+  
+  .farmer-login h2 {
+    font-size: 34px;
+  }
+  
+  .farmer-login .subtitle {
+    font-size: 13px;
+  }
+  
+  .farmer-login::before,
+  .farmer-login::after {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .farmer-login form {
+    padding: 30px 25px;
+  }
+  
+  .farmer-login p {
+    padding: 20px 25px;
+  }
+  
+  .farmer-login h2 {
+    font-size: 28px;
+  }
+  
+  .farmer-login .subtitle {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  
+  .farmer-login form::before {
+    font-size: 18px;
+  }
+  
+  .farmer-login input {
+    padding: 14px 18px 14px 45px;
+    font-size: 15px;
+  }
+  
+  .farmer-login .input-icon {
+    font-size: 18px;
+    left: 15px;
+  }
+  
+  .farmer-login button {
+    padding: 15px;
+    font-size: 16px;
+  }
+  
+  .farmer-login::before,
+  .farmer-login::after {
+    display: none;
+  }
+}

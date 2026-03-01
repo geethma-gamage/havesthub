@@ -1,0 +1,247 @@
+/* FarmerRegister.css - HarvestHub Style */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.farmer-register {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(245, 245, 245, 0.85) 100%),
+              url('https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=1920') center/cover;
+  background-attachment: fixed;
+  position: relative;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* Animated vegetable/fruit pattern overlay */
+.farmer-register::before {
+  content: '🥬';
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.04;
+  top: 10%;
+  left: 5%;
+  animation: float 8s ease-in-out infinite;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.farmer-register::after {
+  content: '🍎';
+  position: absolute;
+  font-size: 100px;
+  opacity: 0.04;
+  bottom: 15%;
+  right: 8%;
+  animation: float 10s ease-in-out infinite reverse;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(10deg); }
+}
+
+/* HarvestHub Logo/Brand Area */
+.farmer-register h2 {
+  text-align: center;
+  color: #2e7d32;
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 800;
+  position: relative;
+  padding-bottom: 15px;
+  letter-spacing: -0.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.farmer-register h2::before {
+  content: '🌿';
+  margin-right: 10px;
+  font-size: 32px;
+}
+
+.farmer-register h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, #4caf50, #66bb6a);
+  border-radius: 5px;
+}
+
+.farmer-register form {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 50px 60px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+  animation: slideIn 0.6s ease-out;
+  border: 1px solid rgba(76, 175, 80, 0.2);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Subtitle for branding */
+.farmer-register form::before {
+  content: 'Fresh Fruits & Vegetables Platform';
+  display: block;
+  text-align: center;
+  color: #558b2f;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+  grid-column: 1 / -1;
+}
+
+.farmer-register input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #dcedc8;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  color: #1b5e20;
+  outline: none;
+  font-weight: 500;
+}
+
+.farmer-register input::placeholder {
+  color: #050505;
+  font-weight: 700;
+}
+
+.farmer-register input:focus {
+  border-color: #4caf50;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+  transform: translateY(-1px);
+}
+
+.farmer-register input:hover {
+  border-color: #9ccc65;
+}
+
+.farmer-register button {
+  grid-column: 1 / -1;
+  padding: 16px;
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.farmer-register button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+  background: linear-gradient(135deg, #43a047 0%, #66bb6a 100%);
+}
+
+.farmer-register button:active {
+  transform: translateY(0px);
+}
+
+/* Decorative corner elements */
+.farmer-register form::after {
+  content: '🥗';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  opacity: 0.08;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .farmer-register form {
+    padding: 40px 30px;
+    max-width: 500px;
+    grid-template-columns: 1fr;
+  }
+  
+  .farmer-register h2 {
+    font-size: 28px;
+  }
+  
+  .farmer-register::before,
+  .farmer-register::after {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .farmer-register form {
+    padding: 30px 20px;
+  }
+  
+  .farmer-register h2 {
+    font-size: 24px;
+  }
+  
+  .farmer-register form::before {
+    font-size: 11px;
+  }
+  
+  .farmer-register input {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  
+  .farmer-register button {
+    padding: 14px;
+    font-size: 15px;
+  }
+  
+  .farmer-register::before,
+  .farmer-register::after {
+    display: none;
+  }
+}

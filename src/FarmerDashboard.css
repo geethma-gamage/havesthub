@@ -1,0 +1,226 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  min-height: 100vh;
+}
+
+/* =====================================================
+   DASHBOARD LAYOUT
+===================================================== */
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =====================================================
+   SIDEBAR - GLASS EFFECT
+===================================================== */
+
+.sidebar {
+  width: 270px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(15px);
+  color: white;
+  padding: 30px 20px;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 5px 0 25px rgba(0,0,0,0.3);
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* Sidebar Buttons */
+
+.sidebar button {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.sidebar button:hover {
+  background: linear-gradient(135deg, #1cc88a, #4e73df);
+  transform: translateX(5px);
+}
+
+.sidebar button.active {
+  background: linear-gradient(135deg, #f6c23e, #e74a3b);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.logout-btn {
+  margin-top: 25px;
+  background: linear-gradient(135deg, #e74a3b, #c0392b);
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+}
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+  margin-left: 270px;
+  flex: 1;
+  padding: 50px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Dashboard Info Card */
+
+.main-content h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.main-content p {
+  background: white;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  font-size: 15px;
+}
+
+/* =====================================================
+   REVIEWS SECTION
+===================================================== */
+
+.reviews-section {
+  max-width: 900px;
+}
+
+.reviews-stats {
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.review-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.customer-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.star {
+  font-size: 18px;
+  color: #ccc;
+}
+
+.star.filled {
+  color: #f6c23e;
+}
+
+.review-comment {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.review-date {
+  font-size: 13px;
+  color: gray;
+}
+
+/* =====================================================
+   HELP SECTION
+===================================================== */
+
+.help-section h3 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #4e73df;
+}
+
+.help-section p {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  margin-bottom: 10px;
+}
+
+/* =====================================================
+   LOADING & EMPTY
+===================================================== */
+
+.loading, .no-reviews {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 25px;
+  }
+}

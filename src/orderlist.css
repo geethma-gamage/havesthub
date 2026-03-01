@@ -1,0 +1,119 @@
+/* Container */
+.order-list {
+  min-height: 600px;
+  background: white;
+  padding: 30px 30px;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  border-top: 8px solid #007bff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+/* Heading */
+.order-list h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 35px;
+  color: #222;
+}
+
+/* Download button */
+.download-btn {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  background-color: #0056b3;
+}
+
+/* Table wrapper - remove horizontal scroll */
+.table-wrapper {
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  table-layout: auto; /* auto width, no fixed widths */
+}
+
+thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+thead th {
+  padding: 8px 10px;
+  font-size: 12px;
+  white-space: normal; /* allow wrap */
+  text-align: left;
+}
+
+tbody td {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-bottom: 1px solid #eee;
+  white-space: normal; /* wrap text instead of overflow */
+  word-break: break-word; /* break long words */
+}
+
+/* Smooth row hover */
+tbody tr {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+tbody tr:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(even) {
+  background-color: #f2f6fc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr { display: block; }
+  thead tr { display: none; }
+
+  tbody tr {
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #fff;
+  }
+
+  tbody td {
+    padding: 6px 8px;
+    text-align: right;
+    position: relative;
+    white-space: normal;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 8px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 12px;
+  }
+}
